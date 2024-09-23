@@ -26,6 +26,8 @@ def cargar_configuracion():
 # Configuración de undetected_chromedriver
 def iniciar_navegador_con_perfil():
     options = uc.ChromeOptions()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
     user_data_dir = os.path.join(base_path, 'UserData')
     options.add_argument(f"user-data-dir={user_data_dir}")
     options.add_argument(r'--profile-directory=Default')
